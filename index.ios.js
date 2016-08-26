@@ -32,12 +32,9 @@ class FirstResponder extends Component {
         this.setState({initialLng});
       },
       (error) => alert(error.message),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+      {enableHighAccuracy: true, timeout: 70000, maximumAge: 7000}
     );
   }
-
-
-
 
 
   render() {
@@ -45,8 +42,11 @@ class FirstResponder extends Component {
     <View style={{flex: 1}}>
      <ScrollView style={styles.blueBackground}>
       <Text style={styles.h1}>First Responder</Text>
+      <View style={styles.container}>
+        <Image style={styles.image} source={require('./images/first-responder-logo.png')} />
+      </View>
        <MapView
-            style={{height: 300, margin: 40}}
+            style={{height: 400, margin: 20}}
             showsUserLocation={true}
             region={{
               latitude: 40.706059,
@@ -74,16 +74,28 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 15,
     textAlign: 'center',
+    fontFamily: 'Avenir-Book'
 
   },
   h1: {
     color: 'white',
-    fontSize: 30,
+    fontSize: 35,
     margin: 10,
     textAlign: 'center',
     marginTop: 30,
-    fontFamily: 'Cochin'
-  }
+    fontFamily: 'Avenir-Book'
+  },
+
+   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+    image: {
+    width: 60,
+    height: 60
+  },
+
 });
 
   var icon = require('./images/splosion.png');
@@ -93,8 +105,8 @@ const styles = StyleSheet.create({
   {
     latitude: 40.706059,
     longitude: -74.009082,
-    title: 'Foo Place',
-    subtitle: '1234 Foo Drive',
+    title: 'Splosion!!!!',
+    subtitle: 'Run for your damn lives',
     image: icon,
 
   }
