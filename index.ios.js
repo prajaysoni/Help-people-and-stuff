@@ -10,10 +10,10 @@ import {
   StyleSheet,
   Text,
   View,
-  MapView,
   ScrollView,
+  Image,
 } from 'react-native';
-
+var MapView = require('react-native-maps')
 
 class FirstResponder extends Component {
   constructor(props) {
@@ -78,5 +78,19 @@ const styles = StyleSheet.create({
     margin: 10,
   }
 });
+
+
+
+  var markers = [
+  {
+    latitude: 40.706059,
+    longitude: -74.009082,
+    title: 'Foo Place',
+    subtitle: '1234 Foo Drive',
+
+    
+  }
+];
+
 
 AppRegistry.registerComponent('FirstResponder', () => FirstResponder);
