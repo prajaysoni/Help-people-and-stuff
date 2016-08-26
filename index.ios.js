@@ -73,14 +73,20 @@ const styles = StyleSheet.create({
   mainText: {
     color: 'white',
     fontSize: 15,
+    textAlign: 'center',
+
   },
   h1: {
-    color: 'darkblue',
+    color: 'white',
     fontSize: 30,
     margin: 10,
+    textAlign: 'center',
+    marginTop: 30,
+    fontFamily: 'Cochin'
   }
 });
 
+  var icon = require('./images/splosion.png');
 
 
   var markers = [
@@ -89,11 +95,7 @@ const styles = StyleSheet.create({
     longitude: -74.009082,
     title: 'Foo Place',
     subtitle: '1234 Foo Drive',
-    annotationImage: {
-        source: { uri: 'https://cldup.com/7NLZklp8zS.png' },
-        height: 25,
-        width: 25
-      }
+    image: icon,
 
   }
 ];
