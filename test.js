@@ -10,10 +10,15 @@ $(document).ready(function(){
 		})
 		.done(function(response){
 			var incidents = response.resourceSets[0].resources;
+			console.log(incidents);
 			function printTraffic(incident){
 				console.log("Description: " + incident.description);
 				console.log("Severity: " + incident.severity);
 				console.log("Road Closed: " + incident.roadClosed);
+				console.log("Latitude: " + incident.point.coordinates[0]);
+				console.log("Longitude: " + incident.point.coordinates[1]);
+				console.log("Type: " + incident.type);
+				console.log("");
 			}
 
 				incidents.forEach(printTraffic);
