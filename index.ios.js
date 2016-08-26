@@ -10,10 +10,11 @@ import {
   StyleSheet,
   Text,
   View,
+  MapView,
   ScrollView,
   Image,
 } from 'react-native';
-var MapView = require('react-native-maps')
+
 
 class FirstResponder extends Component {
   constructor(props) {
@@ -50,10 +51,11 @@ class FirstResponder extends Component {
             region={{
               latitude: 40.706059,
               longitude: -74.009082,
-              latitudeDelta: 0.01, 
-              longitudeDelta: 0.01,
+              latitudeDelta: 0.1, 
+              longitudeDelta: 0.1,
             }}
             showsPointsOfInterest={false}
+            annotations={markers}
           />
 
         <Text style={styles.mainText}>{this.state.initialLat}</Text>
@@ -87,8 +89,12 @@ const styles = StyleSheet.create({
     longitude: -74.009082,
     title: 'Foo Place',
     subtitle: '1234 Foo Drive',
+    annotationImage: {
+        source: { uri: 'https://cldup.com/7NLZklp8zS.png' },
+        height: 25,
+        width: 25
+      }
 
-    
   }
 ];
 
